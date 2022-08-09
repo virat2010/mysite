@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-tmhs&j+7_-&=t(q54i4l_egc*&qz8tg&%lk4zx8wn(pup-8%y$'
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'blog/templates/blog')
+STATIC_DIR = os.path.join(BASE_DIR, 'blog/static')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','127.0.0.2','localhost',8000]
 
@@ -118,8 +119,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 
 LOGIN_REDIRECT_URL = '/'
 
