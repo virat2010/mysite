@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'blog/templates/blog')
-
+STATIC_DIR = os.path.join(BASE_DIR,'blog/static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -26,7 +26,7 @@ SECRET_KEY = 'hzetdi)f#0okx$zu5y=7aae$9e6q25#+wmlu%)#=1s9h-m5s&_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.2','127.0.0.1','localhost','8000']
 
 
 # Application definition
@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -121,8 +121,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 
 LOGIN_REDIRECT_URL = '/'
-
 
 DEBUG = True
